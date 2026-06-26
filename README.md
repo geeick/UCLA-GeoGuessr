@@ -152,3 +152,32 @@ To make random Street View more or less strict, edit these constants in `src/uti
 const RANDOM_STREET_VIEW_ATTEMPTS = 22;
 const RANDOM_STREET_VIEW_RADIUS_METERS = 85;
 ```
+
+
+## 100 UCLA interior picture targets
+
+This version includes 100 labeled Picture Mode entries in:
+
+```txt
+src/data/pictureLocations.js
+```
+
+The matching photo collection checklist is:
+
+```txt
+ucla_picture_collection_checklist.csv
+```
+
+Photos are not bundled. Put your own permission-cleared images in:
+
+```txt
+public/campus-photos/ucla-interiors/
+```
+
+Use the exact filenames from `imageUrl`, or edit the `imageUrl` values to match your files. The app will show a friendly placeholder until each image is added.
+
+The Picture Mode screen intentionally hides the exact building name while the player guesses. Labels stay in the data file for scoring and organization.
+
+## Current public modes
+
+Map Mode is currently the only playable mode. Picture Mode and Mixed Mode are shown as greyed-out Coming Soon cards so users can see they are planned, but they cannot select them yet.

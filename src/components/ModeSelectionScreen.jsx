@@ -2,17 +2,20 @@ const modes = [
   {
     id: "picture",
     title: "Picture Mode",
-    description: "Guess from still photos of UCLA buildings, interiors, landmarks, and campus details."
+    description: "Guess from still photos of UCLA buildings, interiors, landmarks, and campus details.",
+    comingSoon: true
   },
   {
     id: "map",
     title: "Map Mode",
-    description: "Explore from a campus starting point using Street View if configured, or fallback node navigation."
+    description: "Explore from a campus starting point using Street View if configured, or fallback node navigation.",
+    comingSoon: false
   },
   {
     id: "mixed",
     title: "Mixed Mode",
-    description: "Each round randomly switches between Picture Mode and Map Mode."
+    description: "Each round randomly switches between Picture Mode and Map Mode.",
+    comingSoon: true
   }
 ];
 
@@ -30,9 +33,18 @@ export default function ModeSelectionScreen({ onSelectMode, onBack }) {
 
         <div className="mode-grid">
           {modes.map((mode) => (
-            <button key={mode.id} className="mode-card" onClick={() => onSelectMode(mode.id)}>
+            <button
+              key={mode.id}
+              className={`mode-card ${mode.comingSoon ? "mode-card-disabled" : ""}`}
+              onClick={() => {
+                if (!mode.comingSoon) onSelectMode(mode.id);
+              }}
+              disabled={mode.comingSoon}
+              aria-disabled={mode.comingSoon}
+            >
               <span>{mode.title}</span>
               <small>{mode.description}</small>
+              {mode.comingSoon && <strong className="coming-soon-label">Coming soon</strong>}
             </button>
           ))}
         </div>

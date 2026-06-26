@@ -119,12 +119,13 @@ h2 {
 .primary-button:hover,
 .secondary-button:hover,
 .ghost-button:hover,
-.mode-card:hover,
+.mode-card:hover:not(:disabled),
 .movement-button:hover:not(:disabled) {
   transform: translateY(-1px);
 }
 
 .primary-button:disabled,
+.mode-card:disabled,
 .movement-button:disabled {
   cursor: not-allowed;
   opacity: 0.48;
@@ -177,6 +178,35 @@ h2 {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.mode-card-disabled {
+  cursor: not-allowed;
+  color: rgba(255, 255, 255, 0.58);
+  background: linear-gradient(145deg, #6b7280, #9ca3af);
+  box-shadow: none;
+  filter: grayscale(0.75);
+  opacity: 0.68;
+}
+
+.mode-card-disabled span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mode-card-disabled small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.coming-soon-label {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #1f2937;
+  background: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .game-shell {

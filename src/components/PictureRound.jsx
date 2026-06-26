@@ -16,8 +16,8 @@ export default function PictureRound({ location }) {
       </div>
 
       <div className="hint-box">
-        <strong>Hint area:</strong> {location.building}
-        <p>{location.hint}</p>
+        <strong>Hint:</strong> {location.hint}
+        <p className="muted-small">The exact building name is hidden while you guess.</p>
       </div>
     </section>
   );

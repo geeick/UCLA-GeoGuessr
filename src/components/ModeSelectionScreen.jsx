@@ -1,15 +1,16 @@
 const modes = [
   {
-    id: "picture",
-    title: "Picture Mode",
-    description: "Guess from still photos of UCLA buildings, interiors, landmarks, and campus details.",
-    comingSoon: true
-  },
-  {
     id: "map",
     title: "Map Mode",
     description: "Explore from a campus starting point using Street View if configured, or fallback node navigation.",
     comingSoon: false
+    
+  },
+  {
+    id: "picture",
+    title: "Picture Mode",
+    description: "Guess from still photos of UCLA buildings, interiors, landmarks, and campus details.",
+    comingSoon: true
   },
   {
     id: "mixed",

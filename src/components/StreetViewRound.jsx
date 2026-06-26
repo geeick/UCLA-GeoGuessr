@@ -85,10 +85,10 @@ export default function StreetViewRound({
         onReady();
 
         if (panoramaResult.startMethod === "random") {
-          setStatus("Using random real Google Street View");
+          setStatus("Using Google Street View");
           setStartLabel("Your starting spot was randomly chosen on or near UCLA campus.");
         } else {
-          setStatus("Using real Google Street View");
+          setStatus("Using Google Street View");
           setStartLabel("Your starting spot came from a programmed UCLA Street View search.");
         }
       } catch (error) {

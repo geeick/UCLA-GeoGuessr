@@ -1,0 +1,9 @@
+export function pointsFromDistance(distanceMeters) {
+  return Math.max(0, Math.round(5000 * Math.exp(-distanceMeters / 250)));
+}
+
+export function performanceMessage(totalScore) {
+  if (totalScore >= 20000) return "True Bruin";
+  if (totalScore >= 12000) return "Pretty solid";
+  return "You need a campus walk";
+}

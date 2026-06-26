@@ -1,6 +1,7 @@
-// Map Mode fallback data.
-// These connected nodes make a campus navigation game that works without Google Street View.
-// Replace imageUrl and panoramaImageUrl values with real UCLA photos or 360 images later.
+// Map Mode fallback campus navigation nodes.
+// Put regular images or panoramas in: public/campus-views/
+// If you later add Google Street View data, fill in streetViewPanoramaId or streetViewUrl.
+// The app still works without Street View because it falls back to these connected nodes.
 
 export const mapNodes = [
   {
@@ -18,9 +19,9 @@ export const mapNodes = [
       forward: "royce-hall",
       left: "powell-library",
       right: "bruin-plaza",
-      back: "inverted-fountain",
+      back: "bruin-bear"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "royce-hall",
@@ -31,15 +32,14 @@ export const mapNodes = [
     panoramaImageUrl: "/campus-views/royce-hall-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 180,
+    heading: 0,
     pitch: 0,
     connections: {
-      forward: "sculpture-garden",
-      left: "young-research-library",
-      right: "powell-library",
       back: "janss-steps",
+      left: "powell-library",
+      right: "sculpture-garden"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "powell-library",
@@ -50,34 +50,33 @@ export const mapNodes = [
     panoramaImageUrl: "/campus-views/powell-library-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 270,
+    heading: 180,
     pitch: 0,
     connections: {
-      forward: "royce-hall",
-      left: "kerckhoff-hall",
       right: "janss-steps",
-      back: "bruin-plaza",
+      forward: "royce-hall",
+      back: "inverted-fountain"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "bruin-plaza",
     name: "Bruin Plaza",
     latitude: 34.0704,
-    longitude: -118.4448,
+    longitude: -118.4450,
     imageUrl: "/campus-views/bruin-plaza.jpg",
     panoramaImageUrl: "/campus-views/bruin-plaza-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 20,
+    heading: 270,
     pitch: 0,
     connections: {
-      forward: "bruin-bear",
-      left: "kerckhoff-hall",
-      right: "ackerman-union",
-      back: "janss-steps",
+      left: "janss-steps",
+      forward: "ackerman-union",
+      right: "bruin-bear",
+      back: "john-wooden-center"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "bruin-bear",
@@ -88,53 +87,50 @@ export const mapNodes = [
     panoramaImageUrl: "/campus-views/bruin-bear-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 80,
+    heading: 90,
     pitch: 0,
     connections: {
-      forward: "john-wooden-center",
-      left: "ackerman-union",
-      right: "bruin-plaza",
-      back: "kerckhoff-hall",
+      left: "bruin-plaza",
+      forward: "ackerman-union",
+      back: "janss-steps"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "ackerman-union",
     name: "Ackerman Union",
-    latitude: 34.0702,
-    longitude: -118.4449,
+    latitude: 34.0704,
+    longitude: -118.4445,
     imageUrl: "/campus-views/ackerman-union.jpg",
     panoramaImageUrl: "/campus-views/ackerman-union-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 160,
+    heading: 30,
     pitch: 0,
     connections: {
-      forward: "bruin-bear",
-      left: "bruin-plaza",
-      right: "pauley-pavilion",
-      back: "kerckhoff-hall",
+      back: "bruin-plaza",
+      left: "kerckhoff-hall",
+      right: "bruin-bear"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "kerckhoff-hall",
     name: "Kerckhoff Hall",
-    latitude: 34.0708,
-    longitude: -118.4439,
+    latitude: 34.0710,
+    longitude: -118.4436,
     imageUrl: "/campus-views/kerckhoff-hall.jpg",
     panoramaImageUrl: "/campus-views/kerckhoff-hall-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 45,
+    heading: 210,
     pitch: 0,
     connections: {
-      forward: "powell-library",
-      left: "bruin-plaza",
-      right: "inverted-fountain",
-      back: "ackerman-union",
+      right: "ackerman-union",
+      forward: "janss-steps",
+      back: "murphy-hall"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "inverted-fountain",
@@ -145,189 +141,139 @@ export const mapNodes = [
     panoramaImageUrl: "/campus-views/inverted-fountain-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 210,
+    heading: 60,
     pitch: 0,
     connections: {
       forward: "court-of-sciences",
-      left: "kerckhoff-hall",
-      right: "boelter-hall",
-      back: "janss-steps",
+      back: "powell-library",
+      right: "boelter-hall"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "court-of-sciences",
     name: "Court of Sciences",
-    latitude: 34.0688,
-    longitude: -118.4413,
+    latitude: 34.0689,
+    longitude: -118.4410,
     imageUrl: "/campus-views/court-of-sciences.jpg",
     panoramaImageUrl: "/campus-views/court-of-sciences-panorama.jpg",
-    streetViewPanoramaId: null,
-    streetViewUrl: null,
-    heading: 120,
-    pitch: 0,
-    connections: {
-      forward: "boelter-hall",
-      left: "engineering-vi",
-      right: "inverted-fountain",
-      back: "sculpture-garden",
-    },
-    type: "map",
-  },
-  {
-    id: "boelter-hall",
-    name: "Boelter Hall",
-    latitude: 34.0689,
-    longitude: -118.4428,
-    imageUrl: "/campus-views/boelter-hall.jpg",
-    panoramaImageUrl: "/campus-views/boelter-hall-panorama.jpg",
-    streetViewPanoramaId: null,
-    streetViewUrl: null,
-    heading: 300,
-    pitch: 0,
-    connections: {
-      forward: "engineering-vi",
-      left: "court-of-sciences",
-      right: "inverted-fountain",
-      back: "pauley-pavilion",
-    },
-    type: "map",
-  },
-  {
-    id: "engineering-vi",
-    name: "Engineering VI",
-    latitude: 34.0697,
-    longitude: -118.4423,
-    imageUrl: "/campus-views/engineering-vi.jpg",
-    panoramaImageUrl: "/campus-views/engineering-vi-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
     heading: 180,
     pitch: 0,
     connections: {
-      forward: "boelter-hall",
-      left: "court-of-sciences",
-      right: "pauley-pavilion",
       back: "inverted-fountain",
+      left: "boelter-hall",
+      right: "engineering-vi"
     },
-    type: "map",
+    type: "map"
+  },
+  {
+    id: "boelter-hall",
+    name: "Boelter Hall",
+    latitude: 34.0689,
+    longitude: -118.4422,
+    imageUrl: "/campus-views/boelter-hall.jpg",
+    panoramaImageUrl: "/campus-views/boelter-hall-panorama.jpg",
+    streetViewPanoramaId: null,
+    streetViewUrl: null,
+    heading: 120,
+    pitch: 0,
+    connections: {
+      right: "court-of-sciences",
+      forward: "engineering-vi",
+      back: "inverted-fountain"
+    },
+    type: "map"
+  },
+  {
+    id: "engineering-vi",
+    name: "Engineering VI",
+    latitude: 34.0696,
+    longitude: -118.4426,
+    imageUrl: "/campus-views/engineering-vi.jpg",
+    panoramaImageUrl: "/campus-views/engineering-vi-panorama.jpg",
+    streetViewPanoramaId: null,
+    streetViewUrl: null,
+    heading: 300,
+    pitch: 0,
+    connections: {
+      back: "boelter-hall",
+      left: "court-of-sciences",
+      right: "pauley-pavilion"
+    },
+    type: "map"
   },
   {
     id: "pauley-pavilion",
     name: "Pauley Pavilion",
-    latitude: 34.0704,
-    longitude: -118.4468,
+    latitude: 34.0703,
+    longitude: -118.4469,
     imageUrl: "/campus-views/pauley-pavilion.jpg",
     panoramaImageUrl: "/campus-views/pauley-pavilion-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 15,
+    heading: 75,
     pitch: 0,
     connections: {
-      forward: "john-wooden-center",
-      left: "ackerman-union",
-      right: "bruin-bear",
-      back: "boelter-hall",
+      left: "john-wooden-center",
+      back: "engineering-vi",
+      forward: "bruin-plaza"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "john-wooden-center",
     name: "John Wooden Center",
-    latitude: 34.0717,
-    longitude: -118.4466,
+    latitude: 34.0710,
+    longitude: -118.4465,
     imageUrl: "/campus-views/john-wooden-center.jpg",
     panoramaImageUrl: "/campus-views/john-wooden-center-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 210,
+    heading: 150,
     pitch: 0,
     connections: {
-      forward: "pauley-pavilion",
-      left: "bruin-bear",
-      right: "murphy-hall",
-      back: "kaufman-area",
+      forward: "bruin-plaza",
+      right: "pauley-pavilion",
+      back: "bruin-bear"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "sculpture-garden",
     name: "Sculpture Garden",
-    latitude: 34.0731,
-    longitude: -118.4402,
+    latitude: 34.0750,
+    longitude: -118.4410,
     imageUrl: "/campus-views/sculpture-garden.jpg",
     panoramaImageUrl: "/campus-views/sculpture-garden-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 135,
+    heading: 225,
     pitch: 0,
     connections: {
-      forward: "court-of-sciences",
-      left: "young-research-library",
-      right: "royce-hall",
-      back: "murphy-hall",
+      back: "royce-hall",
+      left: "murphy-hall",
+      right: "powell-library"
     },
-    type: "map",
+    type: "map"
   },
   {
     id: "murphy-hall",
     name: "Murphy Hall",
-    latitude: 34.0714,
-    longitude: -118.4396,
+    latitude: 34.0719,
+    longitude: -118.4398,
     imageUrl: "/campus-views/murphy-hall.jpg",
     panoramaImageUrl: "/campus-views/murphy-hall-panorama.jpg",
     streetViewPanoramaId: null,
     streetViewUrl: null,
-    heading: 255,
+    heading: 330,
     pitch: 0,
     connections: {
-      forward: "sculpture-garden",
-      left: "inverted-fountain",
-      right: "john-wooden-center",
-      back: "royce-hall",
+      forward: "kerckhoff-hall",
+      left: "sculpture-garden",
+      back: "inverted-fountain"
     },
-    type: "map",
-  },
-  {
-    id: "young-research-library",
-    name: "Young Research Library",
-    latitude: 34.0742,
-    longitude: -118.4415,
-    imageUrl: "/campus-views/young-research-library.jpg",
-    panoramaImageUrl: "/campus-views/young-research-library-panorama.jpg",
-    streetViewPanoramaId: null,
-    streetViewUrl: null,
-    heading: 190,
-    pitch: 0,
-    connections: {
-      forward: "sculpture-garden",
-      left: "royce-hall",
-      right: "murphy-hall",
-      back: "powell-library",
-    },
-    type: "map",
-  },
-  {
-    id: "kaufman-area",
-    name: "Kaufman Hall Area",
-    latitude: 34.0724,
-    longitude: -118.4460,
-    imageUrl: "/campus-views/kaufman-area.jpg",
-    panoramaImageUrl: "/campus-views/kaufman-area-panorama.jpg",
-    streetViewPanoramaId: null,
-    streetViewUrl: null,
-    heading: 90,
-    pitch: 0,
-    connections: {
-      forward: "john-wooden-center",
-      left: "bruin-bear",
-      right: "pauley-pavilion",
-      back: "bruin-plaza",
-    },
-    type: "map",
-  },
+    type: "map"
+  }
 ];
-
-export function getMapNodeById(id) {
-  return mapNodes.find((node) => node.id === id);
-}

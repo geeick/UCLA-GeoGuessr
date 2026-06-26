@@ -1,9 +1,12 @@
-export function pointsFromDistance(distanceMeters) {
-  return Math.max(0, Math.round(5000 * Math.exp(-distanceMeters / 250)));
-}
-
-export function performanceMessage(totalScore) {
-  if (totalScore >= 20000) return "True Bruin";
-  if (totalScore >= 12000) return "Pretty solid";
-  return "You need a campus walk";
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BruinGuessr</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

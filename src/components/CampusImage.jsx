@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-export default function ImageWithFallback({ src, alt, className = "", label = "Add UCLA image here" }) {
+export default function CampusImage({ src, alt, label = "Add UCLA image here", className = "" }) {
   const [failed, setFailed] = useState(false);
 
   if (!src || failed) {
     return (
-      <div className={`image-fallback ${className}`}>
+      <div className={`image-placeholder ${className}`}>
         <div>
           <strong>{label}</strong>
-          <span>Replace the placeholder path in the data file.</span>
+          <span>Replace the placeholder path with your own photo.</span>
         </div>
       </div>
     );
